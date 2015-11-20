@@ -1,9 +1,9 @@
 var server = require('http').createServer();
 var readJSONFromFile = require('./modules/json-file').readJSONFromFile;
+var showNotify = require('./modules/notify').showNotify;
 
 var settings = readJSONFromFile('./settings.json');
 
-var exec = require('child_process').exec;
 var intervalId = null;
 
 var dictionary = readJSONFromFile(settings.dictionary_path);
@@ -14,11 +14,7 @@ intervalId = setInterval(function() {
 		dictionaryIndex = 0;
 	}
 	var text = dictionary[dictionaryIndex].eng + ' - ' + dictionary[dictionaryIndex].ukr;
-	var command = 'notify-send "' + text + '"';
-	try {
-		exec(command, function(err, out, code) {});
-	} catch(e) {
-	}
+	showNotify(text);
 	dictionaryIndex++;
 }, settings.interval);
 
