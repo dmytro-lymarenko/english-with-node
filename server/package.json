@@ -1,0 +1,13 @@
+{
+  "name": "english with node",
+  "version": "1.0.0",
+  "description": "",
+  "author": "dmytro.lymarenko",
+  "devDependencies": {
+  	"socket.io": "1.3.7",
+    "socketio-file-upload": "0.4.4",
+  	"exec": "0.2.1"
+  },
+  "dependencies": {
+  }
+}
