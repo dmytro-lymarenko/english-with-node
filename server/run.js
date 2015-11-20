@@ -1,11 +1,5 @@
 var server = require('http').createServer();
-var stripJsonComments = require('strip-json-comments');
-var fs = require('fs');
-
-function readJSONFromFile(fileName) {
-	var json = fs.readFileSync(fileName, 'utf8');
-	return JSON.parse(stripJsonComments(json));
-}
+var readJSONFromFile = require('./modules/json-file').readJSONFromFile;
 
 var settings = readJSONFromFile('./settings.json');
 
