@@ -1,12 +1,12 @@
 var server = require('http').createServer();
-var readJSONFromFile = require('./modules/json-file').readJSONFromFile;
+var readJsonFromFile = require('./modules/json-file').readJsonFromFile;
 var showNotify = require('./modules/notify').showNotify;
 
-var settings = readJSONFromFile('./settings.json');
+var settings = readJsonFromFile('./settings.json');
 
 var intervalId = null;
 
-var dictionary = readJSONFromFile(settings.dictionary_path);
+var dictionary = readJsonFromFile(settings.dictionary_path);
 var dictionaryIndex = 0;
 
 intervalId = setInterval(function() {
