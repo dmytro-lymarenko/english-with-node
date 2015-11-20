@@ -12,7 +12,7 @@ var settings = readJSONFromFile('./settings.json');
 var exec = require('child_process').exec;
 var intervalId = null;
 
-var dictionary = readJSONFromFile('./dictionary.json');
+var dictionary = readJSONFromFile(settings.dictionary_path);
 var dictionaryIndex = 0;
 
 intervalId = setInterval(function() {
