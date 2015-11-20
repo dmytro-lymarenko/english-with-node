@@ -1,0 +1,10 @@
+// Don't change this file!
+// If you want to set your own settings please make it in user-settings.json.
+// User settings is more important then settings here, so if some option is in both
+// files the user settings will be setting up.
+// Remember: after updating all changes in this file will be lost.
+
+{
+	// Number of port in which the server will run.
+	"port": 3000
+}
