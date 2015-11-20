@@ -1,4 +1,9 @@
-git fetch --all
-git reset --hard origin/master
+echo 'updating...'
+git fetch --all > /dev/null 2>&1
+git reset --hard origin/master > /dev/null 2>&1
 
-cd server && npm install
+echo 'source updated'
+
+cd server && npm install > /dev/null 2>&1
+echo 'modules updated'
+echo 'finish'
