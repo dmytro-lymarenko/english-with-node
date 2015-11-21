@@ -1,14 +1,15 @@
 var server = require('http').createServer();
 var readJsonFromFile = require('./modules/json-file').readJsonFromFile;
 var showNotify = require('./modules/notify').showNotify;
-var Iterators = require('./modules/iterators');
+var Dictionary = require('./modules/dictionary');
 
 var settings = readJsonFromFile('./settings.json');
 
 var intervalId = null;
+var dictionary = new Dictionary();
+dictionary.loadFromFile(settings.dictionary_path);
 
-var dictionary = readJsonFromFile(settings.dictionary_path);
-var iterator = new Iterators.CyclicIterator(dictionary, 0);
+var iterator = dictionary.first();
 
 intervalId = setInterval(function() {
 	var item = iterator.get();
