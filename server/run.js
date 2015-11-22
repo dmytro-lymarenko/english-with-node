@@ -7,5 +7,7 @@ var settings = readJsonFromFile('./settings.json');
 var teacher = new Teacher(settings);
 teacher.start();
 
+var s = new require('./modules/settings')();
+
 console.log('run server');
 server.listen(settings.port);
