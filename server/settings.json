@@ -5,9 +5,6 @@
 // Remember: after updating all changes in this file will be lost.
 
 {
-	// Number of port in which the server will run.
-	"port": 3000,
-
 	// Inerval in msec
 	"interval": 60000,
 
