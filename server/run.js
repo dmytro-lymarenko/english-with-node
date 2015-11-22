@@ -1,13 +1,10 @@
 var server = require('http').createServer();
-var readJsonFromFile = require('./modules/json-file').readJsonFromFile;
 var Teacher = require('./modules/teacher');
+var Settings = new require('./modules/settings');
+var settings = new Settings();
 
-var settings = readJsonFromFile('./settings.json');
-
-var teacher = new Teacher(settings);
+var teacher = new Teacher(settings.getSettings());
 teacher.start();
 
-var s = new require('./modules/settings')();
-
 console.log('run server');
-server.listen(settings.port);
+server.listen(settings.getSettings().port);
